@@ -281,6 +281,7 @@
 <script>
 // Obtener parámetros de la URL
 const urlParams = new URLSearchParams(window.location.search);
+const caseUser = urlParams.get('case_user'); // Este es el parámetro que contiene el nombre del usuario
 const caseNumber = urlParams.get('case_number');
 const licensePlate = urlParams.get('license_plate');
 const phoneNumber = urlParams.get('phone_number');
@@ -289,8 +290,11 @@ const phoneNumber = urlParams.get('phone_number');
 document.getElementById('case_number_display').innerText = caseNumber || 'No disponible';
 document.getElementById('license_plate_display').innerText = licensePlate || 'No disponible';
 document.getElementById('phone_number_display').innerText = phoneNumber || 'No disponible';
+
+// Mostrar el nombre del usuario que generó el link (esto es lo que faltaba)
+document.getElementById('user_name_display').innerText = caseUser || 'No disponible';
 </script>
+
 
 </body>
 </html>
-
